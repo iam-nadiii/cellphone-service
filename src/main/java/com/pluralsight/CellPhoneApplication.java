@@ -6,10 +6,16 @@ import java.util.Scanner;
 public class CellPhoneApplication {
 
     public static void main(String[] args) {
-        CellPhone cellphone = getCellPhone();
+        CellPhone cellPhone1 = getCellPhone();
+        CellPhone cellPhone2 = getCellPhone();
 
+        display(cellPhone1);
 
-        displayInfo(cellphone);
+        display(cellPhone2);
+
+        cellPhone1.dial(cellPhone2.getPhoneNumber());
+
+        cellPhone2.dial(cellPhone1.getPhoneNumber());
 
 
     }
@@ -39,10 +45,11 @@ public class CellPhoneApplication {
         prompt("Enter name of the owner of this number: ");
         cellphone.setOwner(input.next());
         input.nextLine();
+        System.out.println();
         return cellphone;
     }
 
-    private static void displayInfo(CellPhone cellphone) {
+    private static void display(CellPhone cellphone) {
         System.out.println();
         System.out.print("Owner name: ");
         prompt(cellphone.getOwner());
@@ -70,8 +77,8 @@ public class CellPhoneApplication {
     static void prompt(String label){
         System.out.print(label);
     }
-}
 
+}
 
 
 
