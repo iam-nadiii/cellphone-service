@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class CellPhoneApplication {
 
     public static void main(String[] args) {
-        CellPhone cellPhone1 = getCellPhone();
-        CellPhone cellPhone2 = getCellPhone();
+        CellPhone cellPhone1 = setCellPhone();
+        CellPhone cellPhone2 = setCellPhone();
 
         display(cellPhone1);
 
@@ -17,10 +17,19 @@ public class CellPhoneApplication {
 
         cellPhone2.dial(cellPhone1.getPhoneNumber());
 
+        CellPhone cellPhone3 = new CellPhone(288932, "Iphone 17 Pro Max", "T-Mobile",
+        "945-537-3898", "Naod Asmelash");
+
+        display(cellPhone3);
+
+        cellPhone1.dial(cellPhone3.getPhoneNumber());
+
+        cellPhone1.dial(cellPhone3);
+
 
     }
 
-    private static CellPhone getCellPhone() {
+    private static CellPhone setCellPhone() {
         Scanner input = new Scanner(System.in);
 
         CellPhone cellphone = new CellPhone();
